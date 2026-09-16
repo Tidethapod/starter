@@ -9,6 +9,12 @@
     box-shadow: 0 15px 40px rgba(v.$color-black, 0.15);
     transition: transform 0.3s;
 
+    &__icon {
+        font-size: 60px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
     &__text {
         font-size: 15px;
     }

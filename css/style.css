@@ -78,6 +78,14 @@ body {
   text-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 80px;
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -148,80 +156,6 @@ body {
   transform: translateY(0);
 }
 
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-.header .logo-box {
-  top: 40px;
-  left: 40px;
-  position: absolute;
-}
-.header .logo {
-  height: 3.5rem;
-}
-.header .text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.u-center-text {
-  text-align: center;
-}
-
-.u-margin-bottom-big {
-  margin-bottom: 80px;
-}
-
-.section-about {
-  background-color: #f7f7f7;
-  padding: 250px 0;
-  margin-top: -20vh;
-}
-
-.section-features {
-  padding: 200px 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
-  background-size: cover;
-  transform: skewY(-7deg);
-  margin-top: -100px;
-}
-.section-features > * {
-  transform: skewY(7deg);
-}
-
-.row {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.row .col-1-of-2 {
-  width: calc((100% - 60px) / 2);
-  float: left;
-}
-.row .col-1-of-2:not(:last-child) {
-  margin-right: 60px;
-}
-
-.col-1-of-4 {
-  width: calc((100% - 3 * 60px) / 4);
-  float: left;
-}
-.col-1-of-4:not(:last-child) {
-  margin-right: 60px;
-}
-
 .composition {
   position: relative;
 }
@@ -265,11 +199,93 @@ body {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s;
 }
+.feature-box__icon {
+  font-size: 60px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
 .feature-box__text {
   font-size: 15px;
 }
 .feature-box:hover {
   transform: translateY(-15px) scale(1.03);
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+.header .logo-box {
+  top: 40px;
+  left: 40px;
+  position: absolute;
+}
+.header .logo {
+  height: 3.5rem;
+}
+.header .text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row .col-1-of-2 {
+  width: calc((100% - 60px) / 2);
+  float: left;
+}
+.row .col-1-of-2:not(:last-child) {
+  margin-right: 60px;
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 60px) / 4);
+  float: left;
+}
+.row .col-1-of-4:not(:last-child) {
+  margin-right: 60px;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 250px 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  padding: 200px 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -100px;
+}
+.section-features > * {
+  transform: skewY(7deg);
+}
+
+.section-features {
+  padding: 200px 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: skewY(-7deg);
+  margin-top: -100px;
+}
+.section-features > * {
+  transform: skewY(7deg);
 }
 
 /*# sourceMappingURL=style.css.map */
