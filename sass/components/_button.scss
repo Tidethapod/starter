@@ -53,3 +53,27 @@
     opacity: 0;
 }
 }
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: 16px;
+        color: v.$color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid v.$color-primary;
+        padding: 3px;
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        background-color: v.$color-primary;
+        color: v.$color-white;
+        box-shadow: 0 10px 20px rgba(v.$color-black, 0.15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 5px 10px rgba(v.$color-black, 0.15);
+        transform: translateY(0);
+    }
+}
