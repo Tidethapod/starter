@@ -1,79 +1,112 @@
 @use "../abstracts/variables" as v;
 
-.btn{
-  &:link,
-  &:visited{
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 30px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all .2s;
-    position: relative;
-  }
-  &:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(v.$color-black, .2);
-  }
-  &:active{
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(v.$color-black, .2);
-  }
-  &-white{
-    background-color: v.$color-white;
-    color: v.$color-black;
-    font-size: 14px;
-    border: 1px solid transparent;
-
-    &:hover{
-      background-color: transparent;
-      border: 1px solid v.$color-white;
-      color: v.$color-white;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(v.$color-black, .2);
-    }
-    &::after{
-      content: "";
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      border-radius: 100px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: all .4s;
-    }
-    &::after{
-      background-color: v.$color-white;
-    }
-  }
-  &:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-}
-.btn-text {
+.btn {
+    &,
     &:link,
     &:visited {
-        font-size: 16px;
-        color: v.$color-primary;
-        display: inline-block;
+        text-transform: uppercase;
         text-decoration: none;
-        border-bottom: 1px solid v.$color-primary;
-        padding: 3px;
+
+        padding: 1.5rem 4rem;
+
+        display: inline-block;
+
+        border-radius: 10rem;
+
         transition: all 0.2s;
+
+        position: relative;
+
+        font-size: 1.6rem;
+
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
-        background-color: v.$color-primary;
-        color: v.$color-white;
-        box-shadow: 0 10px 20px rgba(v.$color-black, 0.15);
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+
+        box-shadow: 0 1rem 2rem rgba(v.$color-black, 0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
     }
 
-    &:active {
-        box-shadow: 0 5px 10px rgba(v.$color-black, 0.15);
-        transform: translateY(0);
+    &:active,
+    &:focus {
+        outline: none;
+
+        transform: translateY(-1px);
+
+        box-shadow: 0 0.5rem 1rem rgba(v.$color-black, 0.2);
     }
+
+    &-white {
+        background-color: v.$color-white;
+        color: v.$color-grey-dark;
+
+        &::after {
+            background-color: v.$color-white;
+        }
+    }
+
+    &-green {
+        background-color: v.$color-primary;
+        color: v.$color-white;
+
+        &::after {
+            background-color: v.$color-primary;
+        }
+    }
+
+    &::after {
+        content: "";
+
+        display: inline-block;
+
+        height: 100%;
+        width: 100%;
+
+        border-radius: 10rem;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: -1;
+
+        transition: all 0.4s;
+    }
+}
+button.btn {
+    font-family: inherit;
+    font-size: 1.6rem;
+
+    text-transform: uppercase;
+
+    padding: 1.5rem 4rem;
+
+    border: none;
+    border-radius: 10rem;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+}
+
+button.btn-green {
+    background-color: v.$color-primary;
+    color: v.$color-white;
+}
+
+button.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(v.$color-black, 0.2);
+}
+
+button.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(v.$color-black, 0.2);
 }

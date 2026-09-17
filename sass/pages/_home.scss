@@ -46,6 +46,57 @@
         v.$color-primary-dark
     );
 }
+.book {
+    background-image:
+        linear-gradient(
+            105deg,
+            rgba(v.$color-white, 0.9) 0%,
+            rgba(v.$color-white, 0.9) 50%,
+            transparent 50%
+        ),
+        url("../img/nat-10.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(v.$color-black, 0.2);
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
+
+    @include m.respond(tab-land) {
+        background-image:
+            linear-gradient(
+                105deg,
+                rgba(v.$color-white, 0.9) 0%,
+                rgba(v.$color-white, 0.9) 65%,
+                transparent 65%
+            ),
+            url("../img/nat-10.jpg");
+
+        &__form {
+            width: 65%;
+        }
+    }
+
+    @include m.respond(tab-port) {
+        background-image:
+            linear-gradient(
+                to right,
+                rgba(v.$color-white, 0.9) 0%,
+                rgba(v.$color-white, 0.9) 100%
+            ),
+            url("../img/nat-10.jpg");
+
+        &__form {
+            width: 100%;
+            padding: 5rem;
+        }
+    }
+}
 
 @include m.respond(tab-port) {
     .section-about,

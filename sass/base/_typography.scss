@@ -56,4 +56,11 @@
         transform: skewY(2deg) skewX(15deg) scale(1.1);
         text-shadow: 5px 10px 20px rgba(v.$color-black, 0.2);
     }
+    @include m.respond(tab-port) {
+    font-size: 3rem;
+}
+
+@include m.respond(phone) {
+    font-size: 2.5rem;
+}
 }
