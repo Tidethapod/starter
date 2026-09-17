@@ -1,38 +1,66 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
 .composition {
-  position: relative;
+    position: relative;
 
-  &__photo {
-    width: 55%;
-    box-shadow: 0 15px 40px rgba(0,0,0, 0.4);
-    border-radius: 2px;
-    position: absolute;
-    z-index: 10;
-    transition: all 0.2s;
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba(v.$color-black, 0.4);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        transition: all 0.2s;
+        outline-offset: 2rem;
 
-    &hover{
-      outline: 15px solid v.$color-primary;
-      transform: scale(1.05) translateY(-5px);
-      box-shadow: 0 25px 40px rgba(v.$color-black, 0.5);
-      z-index: 20;
+        @include m.respond(tab-port) {
+            float: left;
+            position: relative;
+            width: 33.333333%;
+            box-shadow: 0 1.5rem 3rem rgba(v.$color-black, 0.2);
+        }
+
+        &--p1 {
+            left: 0;
+            top: -2rem;
+
+            @include m.respond(tab-port) {
+                top: 0;
+                transform: scale(1.2);
+            }
+        }
+
+        &--p2 {
+            right: 0;
+            top: 2rem;
+
+            @include m.respond(tab-port) {
+                top: -1rem;
+                transform: scale(1.3);
+                z-index: 100;
+            }
+        }
+
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+
+            @include m.respond(tab-port) {
+                top: 1rem;
+                left: 0;
+                transform: scale(1.1);
+            }
+        }
+
+        &:hover {
+            outline: 1.5rem solid v.$color-primary;
+            transform: scale(1.05) translateY(-0.5rem);
+            box-shadow: 0 2.5rem 4rem rgba(v.$color-black, 0.5);
+            z-index: 20;
+        }
     }
 
-    &--p1{
-      left: 0;
-      top:-20px;
+    &:hover &__photo:not(:hover) {
+        transform: scale(0.95);
     }
-       &--p2{
-      right: 0;
-      top:20px;
-    }
-       &--p3{
-      left: 20%;
-      top:100px;
-    }
-  
-  }
-&:hover &__photo:not(:hover){
-  transform: scale(0.95);
-  outline-offset: 20px;
-}
 }

@@ -1,14 +1,39 @@
 @use "../abstracts/variables" as v;
-* {
+@use "../abstracts/mixins" as m;
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include m.respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include m.respond(tab-port) {
+        font-size: 50%;
+    }
+
+    @include m.respond(big-desktop) {
+        font-size: 75%;
+    }
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: v.$color-grey-dark;
-  padding: 30px;
+    box-sizing: border-box;
+
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: v.$color-grey-dark;
+    padding: 3rem;
+
+    @include m.respond(tab-port) {
+        padding: 0;
+    }
 }
